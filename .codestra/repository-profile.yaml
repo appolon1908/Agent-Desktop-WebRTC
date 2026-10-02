@@ -4,8 +4,8 @@ repository: "appolon1908/Agent-Desktop-WebRTC"
 canonical_url: "https://github.com/appolon1908/Agent-Desktop-WebRTC"
 default_branch_observed: "main"
 classification:
-  type: "application"
-  subtype: "general"
+  type: "communications"
+  subtype: "webrtc-agent"
   standalone: true
   integration_boundary: "api-or-endpoint"
 lifecycle:
