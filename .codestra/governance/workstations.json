@@ -1,0 +1,621 @@
+{
+  "schema_version": "codestra.workstations.v3",
+  "family": "contact-center",
+  "product": "Agent-Desktop-WebRTC",
+  "sections": [
+    {
+      "section": "ad-01-shell",
+      "branch": "section/ad-01-shell",
+      "order": 1,
+      "depends_on": [],
+      "subsections": [
+        {
+          "subsection": "01-bootstrap",
+          "workstation_id": "agent-desktop-webrtc::ad-01-shell::01-bootstrap",
+          "branch": "subsection/ad-01-shell--01-bootstrap",
+          "parent_branch": "section/ad-01-shell",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-01-shell/subsections/01-bootstrap/repo"
+        },
+        {
+          "subsection": "02-navigation",
+          "workstation_id": "agent-desktop-webrtc::ad-01-shell::02-navigation",
+          "branch": "subsection/ad-01-shell--02-navigation",
+          "parent_branch": "section/ad-01-shell",
+          "order": 2,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-01-shell::01-bootstrap"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-01-shell/subsections/02-navigation/repo"
+        },
+        {
+          "subsection": "03-error-boundaries",
+          "workstation_id": "agent-desktop-webrtc::ad-01-shell::03-error-boundaries",
+          "branch": "subsection/ad-01-shell--03-error-boundaries",
+          "parent_branch": "section/ad-01-shell",
+          "order": 3,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-01-shell::02-navigation"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-01-shell/subsections/03-error-boundaries/repo"
+        }
+      ]
+    },
+    {
+      "section": "ad-02-identity",
+      "branch": "section/ad-02-identity",
+      "order": 2,
+      "depends_on": [
+        "agent-desktop-webrtc::ad-01-shell"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-keycloak-login",
+          "workstation_id": "agent-desktop-webrtc::ad-02-identity::01-keycloak-login",
+          "branch": "subsection/ad-02-identity--01-keycloak-login",
+          "parent_branch": "section/ad-02-identity",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-02-identity/subsections/01-keycloak-login/repo"
+        },
+        {
+          "subsection": "02-session",
+          "workstation_id": "agent-desktop-webrtc::ad-02-identity::02-session",
+          "branch": "subsection/ad-02-identity--02-session",
+          "parent_branch": "section/ad-02-identity",
+          "order": 2,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-02-identity::01-keycloak-login"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-02-identity/subsections/02-session/repo"
+        },
+        {
+          "subsection": "03-agent-binding",
+          "workstation_id": "agent-desktop-webrtc::ad-02-identity::03-agent-binding",
+          "branch": "subsection/ad-02-identity--03-agent-binding",
+          "parent_branch": "section/ad-02-identity",
+          "order": 3,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-02-identity::02-session"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-02-identity/subsections/03-agent-binding/repo"
+        }
+      ]
+    },
+    {
+      "section": "ad-03-softphone",
+      "branch": "section/ad-03-softphone",
+      "order": 3,
+      "depends_on": [
+        "agent-desktop-webrtc::ad-02-identity"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-webrtc",
+          "workstation_id": "agent-desktop-webrtc::ad-03-softphone::01-webrtc",
+          "branch": "subsection/ad-03-softphone--01-webrtc",
+          "parent_branch": "section/ad-03-softphone",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-03-softphone/subsections/01-webrtc/repo"
+        },
+        {
+          "subsection": "02-call-controls",
+          "workstation_id": "agent-desktop-webrtc::ad-03-softphone::02-call-controls",
+          "branch": "subsection/ad-03-softphone--02-call-controls",
+          "parent_branch": "section/ad-03-softphone",
+          "order": 2,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-03-softphone::01-webrtc"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-03-softphone/subsections/02-call-controls/repo"
+        },
+        {
+          "subsection": "03-device-state",
+          "workstation_id": "agent-desktop-webrtc::ad-03-softphone::03-device-state",
+          "branch": "subsection/ad-03-softphone--03-device-state",
+          "parent_branch": "section/ad-03-softphone",
+          "order": 3,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-03-softphone::02-call-controls"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-03-softphone/subsections/03-device-state/repo"
+        }
+      ]
+    },
+    {
+      "section": "ad-04-agent-state",
+      "branch": "section/ad-04-agent-state",
+      "order": 4,
+      "depends_on": [
+        "agent-desktop-webrtc::ad-03-softphone"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-presence",
+          "workstation_id": "agent-desktop-webrtc::ad-04-agent-state::01-presence",
+          "branch": "subsection/ad-04-agent-state--01-presence",
+          "parent_branch": "section/ad-04-agent-state",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-04-agent-state/subsections/01-presence/repo"
+        },
+        {
+          "subsection": "02-campaign-context",
+          "workstation_id": "agent-desktop-webrtc::ad-04-agent-state::02-campaign-context",
+          "branch": "subsection/ad-04-agent-state--02-campaign-context",
+          "parent_branch": "section/ad-04-agent-state",
+          "order": 2,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-04-agent-state::01-presence"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-04-agent-state/subsections/02-campaign-context/repo"
+        },
+        {
+          "subsection": "03-dispositions",
+          "workstation_id": "agent-desktop-webrtc::ad-04-agent-state::03-dispositions",
+          "branch": "subsection/ad-04-agent-state--03-dispositions",
+          "parent_branch": "section/ad-04-agent-state",
+          "order": 3,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-04-agent-state::02-campaign-context"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-04-agent-state/subsections/03-dispositions/repo"
+        }
+      ]
+    },
+    {
+      "section": "ad-05-contact-center-api",
+      "branch": "section/ad-05-contact-center-api",
+      "order": 5,
+      "depends_on": [
+        "agent-desktop-webrtc::ad-04-agent-state"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-middleware-client",
+          "workstation_id": "agent-desktop-webrtc::ad-05-contact-center-api::01-middleware-client",
+          "branch": "subsection/ad-05-contact-center-api--01-middleware-client",
+          "parent_branch": "section/ad-05-contact-center-api",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-05-contact-center-api/subsections/01-middleware-client/repo"
+        },
+        {
+          "subsection": "02-vicidial-client",
+          "workstation_id": "agent-desktop-webrtc::ad-05-contact-center-api::02-vicidial-client",
+          "branch": "subsection/ad-05-contact-center-api--02-vicidial-client",
+          "parent_branch": "section/ad-05-contact-center-api",
+          "order": 2,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-05-contact-center-api::01-middleware-client"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-05-contact-center-api/subsections/02-vicidial-client/repo"
+        },
+        {
+          "subsection": "03-realtime-events",
+          "workstation_id": "agent-desktop-webrtc::ad-05-contact-center-api::03-realtime-events",
+          "branch": "subsection/ad-05-contact-center-api--03-realtime-events",
+          "parent_branch": "section/ad-05-contact-center-api",
+          "order": 3,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-05-contact-center-api::02-vicidial-client"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-05-contact-center-api/subsections/03-realtime-events/repo"
+        }
+      ]
+    },
+    {
+      "section": "ad-06-ux",
+      "branch": "section/ad-06-ux",
+      "order": 6,
+      "depends_on": [
+        "agent-desktop-webrtc::ad-05-contact-center-api"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-accessibility",
+          "workstation_id": "agent-desktop-webrtc::ad-06-ux::01-accessibility",
+          "branch": "subsection/ad-06-ux--01-accessibility",
+          "parent_branch": "section/ad-06-ux",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-06-ux/subsections/01-accessibility/repo"
+        },
+        {
+          "subsection": "02-responsive",
+          "workstation_id": "agent-desktop-webrtc::ad-06-ux::02-responsive",
+          "branch": "subsection/ad-06-ux--02-responsive",
+          "parent_branch": "section/ad-06-ux",
+          "order": 2,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-06-ux::01-accessibility"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-06-ux/subsections/02-responsive/repo"
+        },
+        {
+          "subsection": "03-notifications",
+          "workstation_id": "agent-desktop-webrtc::ad-06-ux::03-notifications",
+          "branch": "subsection/ad-06-ux--03-notifications",
+          "parent_branch": "section/ad-06-ux",
+          "order": 3,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-06-ux::02-responsive"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-06-ux/subsections/03-notifications/repo"
+        }
+      ]
+    },
+    {
+      "section": "ad-07-testing",
+      "branch": "section/ad-07-testing",
+      "order": 7,
+      "depends_on": [
+        "agent-desktop-webrtc::ad-06-ux"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-unit",
+          "workstation_id": "agent-desktop-webrtc::ad-07-testing::01-unit",
+          "branch": "subsection/ad-07-testing--01-unit",
+          "parent_branch": "section/ad-07-testing",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-07-testing/subsections/01-unit/repo"
+        },
+        {
+          "subsection": "02-integration",
+          "workstation_id": "agent-desktop-webrtc::ad-07-testing::02-integration",
+          "branch": "subsection/ad-07-testing--02-integration",
+          "parent_branch": "section/ad-07-testing",
+          "order": 2,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-07-testing::01-unit"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-07-testing/subsections/02-integration/repo"
+        },
+        {
+          "subsection": "03-e2e",
+          "workstation_id": "agent-desktop-webrtc::ad-07-testing::03-e2e",
+          "branch": "subsection/ad-07-testing--03-e2e",
+          "parent_branch": "section/ad-07-testing",
+          "order": 3,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-07-testing::02-integration"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-07-testing/subsections/03-e2e/repo"
+        }
+      ]
+    },
+    {
+      "section": "ad-08-release",
+      "branch": "section/ad-08-release",
+      "order": 8,
+      "depends_on": [
+        "agent-desktop-webrtc::ad-07-testing"
+      ],
+      "subsections": [
+        {
+          "subsection": "01-build",
+          "workstation_id": "agent-desktop-webrtc::ad-08-release::01-build",
+          "branch": "subsection/ad-08-release--01-build",
+          "parent_branch": "section/ad-08-release",
+          "order": 1,
+          "depends_on": [],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-08-release/subsections/01-build/repo"
+        },
+        {
+          "subsection": "02-observability",
+          "workstation_id": "agent-desktop-webrtc::ad-08-release::02-observability",
+          "branch": "subsection/ad-08-release--02-observability",
+          "parent_branch": "section/ad-08-release",
+          "order": 2,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-08-release::01-build"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-08-release/subsections/02-observability/repo"
+        },
+        {
+          "subsection": "03-certification-promotion",
+          "workstation_id": "agent-desktop-webrtc::ad-08-release::03-certification-promotion",
+          "branch": "subsection/ad-08-release--03-certification-promotion",
+          "parent_branch": "section/ad-08-release",
+          "order": 3,
+          "depends_on": [
+            "agent-desktop-webrtc::ad-08-release::02-observability"
+          ],
+          "required_gates": [
+            "lint",
+            "unit",
+            "integration",
+            "contract",
+            "security",
+            "clean_tree",
+            "remote_sha_match",
+            "ci_exact_sha",
+            "review",
+            "regression"
+          ],
+          "worktree": "/srv/codestra/workstations/Agent-Desktop-WebRTC/sections/ad-08-release/subsections/03-certification-promotion/repo"
+        }
+      ]
+    }
+  ]
+}
